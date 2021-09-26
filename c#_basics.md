@@ -89,3 +89,28 @@ Console.WriteLine("Enter your age:");
 int age = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Your age is: " + age)
 ```
+
+## Aritmetic Operators
+
+If you forget any operators check this [**link**](https://www.w3schools.com/cs/cs_operators.php)
+
+## C# Math
+
+The C# Math class has many methods that allows you to perform mathematical tasks on numbers.  
+**Math.Max(x,y) and Math.Min(x,y:)**  
+The `Math.Max(x,y)` method can be used to find the highest value of x and y:
+
+```c#
+Math.Max(5, 10);
+Math.Min(5, 10);
+```
+
+**Math.Sqrt(x)**  
+The `Math.Sqrt(x)` method returns the square root of x:
+
+```c#
+Math.Sqrt(64);
+```
+
+There is lots of methods like this at Math Lib, methods links are here:  
+[**C Sharp Math Class**](https://www.geeksforgeeks.org/c-sharp-math-class/)
