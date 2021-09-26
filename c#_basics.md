@@ -24,15 +24,18 @@ namespace HelloWorld
 
 **Note:** `class` is a container for data and methods, which brings functionality to your program. Every line of code that runs in C# must be inside a class. In our example, we named the class Program.
 
-**Note:** Unlike Java, the name of the C# file does not have to match the class name, but they often do (for better organization).  
+**Note:** Unlike Java, the name of the C# file does not have to match the class name, but they often do (for better organization).
 
 ## Variables
-* `int` 
-* `double` 
-* `char`
-* `string`
-* `bool`  
+
+- `int`
+- `double`
+- `char`
+- `string`
+- `bool`
+
 Syntax:
+
 ```c#
 type variableName = value;
 ```
@@ -50,3 +53,39 @@ Console.WriteLine(Convert.ToInt32(myDouble));  // convert double to int
 Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
 ```
 
+## User Input
+
+Now we will use `Console.ReadLine()` to get user input.
+**Example:**
+
+```c#
+// Type your username and press enter
+Console.WriteLine("Enter username:");
+
+// Create a string variable and get user input from the keyboard and store it in the variable
+string userName = Console.ReadLine();
+
+// Print the value of the variable (userName), which will display the input value
+Console.WriteLine("Username is: " + userName);
+```
+
+**The `Console.ReadLine()` method returns a string. Therefore, you cannot get information from another data type, such as `int`. The following program will cause an error:**
+
+```c#
+Console.WriteLine("Enter your age:");
+int age = Console.ReadLine();
+Console.WriteLine("Your age is: " + age);
+```
+
+The error message will be something like this:
+
+> Cannot implicitly convert type 'string' to 'int'
+
+Luckily, that you can convert any type explicitly, by using one of the `Convert.To` methods:  
+**Example:**
+
+```C#
+Console.WriteLine("Enter your age:");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is: " + age)
+```
