@@ -114,3 +114,71 @@ Math.Sqrt(64);
 
 There is lots of methods like this at Math Lib, methods links are here:  
 [**C Sharp Math Class**](https://www.geeksforgeeks.org/c-sharp-math-class/)
+
+## C# Strings
+
+A string in C# is actually an object, which contain properties and methods that can perform certain operations on strings.  
+**Example Methods:**  
+The length of a string can be found with the `Length` property:
+
+```c#
+string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+Console.WriteLine("The length of the txt string is: " + txt.Length);
+```
+
+There are many string methods available, for example `ToUpper()` and `ToLower()`, which returns a copy of the string converted to uppercase or lowercase:
+
+```c#
+string txt = "Hello World";
+Console.WriteLine(txt.ToUpper());   // Outputs "HELLO WORLD"
+Console.WriteLine(txt.ToLower());   // Outputs "hello world"
+```
+
+**String Interpolation:**
+
+```c#
+string firstName = "John";
+string lastName = "Doe";
+string name = $"My full name is: {firstName} {lastName}";
+Console.WriteLine(name);
+```
+
+**Access Strings:**
+
+```c#
+string myString = "Hello";
+Console.WriteLine(myString[1]);  // Outputs "e"
+```
+Another useful method is `Substring()`, which extracts the characters from a string, starting from the specified character position/index, and returns a new string. This method is often used together with `IndexOf()` to get the specific character position:
+
+```c#
+// Full name
+string name = "John Doe";
+
+// Location of the letter D
+int charPos = name.IndexOf("D");
+
+// Get last name
+string lastName = name.Substring(charPos);
+
+// Print the result
+Console.WriteLine(lastName);
+```
+Other useful escape characters in C# are:
+
+| Code | Result |
+| ----------- | ----------- |
+| \n | New Line |
+| \t | Tab |
+|\b|Backspace|
+
+## C# If ...Else
+
+*  `if` 
+*  `else`  
+*  `else if`
+*  `switch` 
+
+**Short Hand If...Else:**  
+`variable = (condition) ? expressionTrue :  expressionFalse;`
+
