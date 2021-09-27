@@ -149,6 +149,7 @@ Console.WriteLine(name);
 string myString = "Hello";
 Console.WriteLine(myString[1]);  // Outputs "e"
 ```
+
 Another useful method is `Substring()`, which extracts the characters from a string, starting from the specified character position/index, and returns a new string. This method is often used together with `IndexOf()` to get the specific character position:
 
 ```c#
@@ -164,21 +165,187 @@ string lastName = name.Substring(charPos);
 // Print the result
 Console.WriteLine(lastName);
 ```
+
 Other useful escape characters in C# are:
 
-| Code | Result |
-| ----------- | ----------- |
-| \n | New Line |
-| \t | Tab |
-|\b|Backspace|
+| Code | Result    |
+| ---- | --------- |
+| \n   | New Line  |
+| \t   | Tab       |
+| \b   | Backspace |
 
 ## C# If ...Else
 
-*  `if` 
-*  `else`  
-*  `else if`
-*  `switch` 
+- `if`
+- `else`
+- `else if`
+- `switch`
 
 **Short Hand If...Else:**  
-`variable = (condition) ? expressionTrue :  expressionFalse;`
+`variable = (condition) ? expressionTrue : expressionFalse;`
+
+## C# Switch:
+
+Use the switch statement to select one of many code blocks to be executed.
+switch(expression)
+
+```c#
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}
+```
+
+## Loops
+
+**While Loops:**
+
+```c#
+int i = 0;
+while (i < 5)
+{
+  Console.WriteLine(i);
+  i++;
+}
+```
+
+**For Loops:**
+
+```c#
+for (int i = 0; i < 5; i++)
+{
+  Console.WriteLine(i);
+}
+```
+
+**Foreach:**  
+There is also a `foreach` loop, which is used exclusively to loop through elements in an **array**:
+
+```c#
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+foreach (string i in cars)
+{
+  Console.WriteLine(i);
+}
+```
+
+## Continue/Break
+
+**Break:**  
+The `break` statement can also be used to jump out of a loop.  
+This example jumps out of the loop when i is equal to `4`:
+
+```c#
+for (int i = 0; i < 10; i++)
+{
+  if (i == 4)
+  {
+    break;
+  }
+  Console.WriteLine(i);
+}
+```
+
+**Continue**
+The `continue` statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+This example skips the value of `4`:
+
+```c#
+for (int i = 0; i < 10; i++)
+{
+  if (i == 4)
+  {
+    continue;
+  }
+  Console.WriteLine(i);
+}
+```
+
+## Arrays
+
+To declare an array, define the variable type with square brackets:
+
+```c#
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+int[] myNum = {10, 20, 30, 40};
+```
+
+**Access**
+
+```c#
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars[0]);
+// Outputs Volvo
+```
+
+**Array Length**
+
+```c#
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars.Length);
+// Outputs 4
+```
+
+**Sort Arrays**  
+There are many array methods available, for example Sort(), which sorts an array alphabetically or in an ascending order:
+
+```c#
+// Sort an int
+int[] myNumbers = {5, 1, 8, 9};
+Array.Sort(myNumbers);
+foreach (int i in myNumbers)
+{
+  Console.WriteLine(i);
+}
+```
+
+**System.Linq Namespace**
+Other useful array methods, such as `Min`, `Max`, and `Sum`, can be found in the `System.Linq` namespace:  
+
+```c#
+using System;
+using System.Linq;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int[] myNumbers = {5, 1, 8, 9};
+      Console.WriteLine(myNumbers.Max());  // returns the largest value
+      Console.WriteLine(myNumbers.Min());  // returns the smallest value
+      Console.WriteLine(myNumbers.Sum());  // returns the sum of elements
+    }
+  }
+}
+```
+
+**Other Ways to Create an Array**  
+```c#
+// Create an array of four elements, and add values later
+string[] cars = new string[4];
+
+// Create an array of four elements and add values right away 
+string[] cars = new string[4] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Create an array of four elements without specifying the size 
+string[] cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Create an array of four elements, omitting the new keyword, and without specifying the size
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+```
+It is up to you which option you choose. In our tutorial, we will often use the last option, as it is faster and easier to read.
+
+However, you should note that if you declare an array and initialize it later, you have to use the new keyword:
+
+
 
