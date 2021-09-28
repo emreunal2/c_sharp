@@ -347,5 +347,14 @@ It is up to you which option you choose. In our tutorial, we will often use the 
 
 However, you should note that if you declare an array and initialize it later, you have to use the new keyword:
 
+```c#
+// Declare an array
+string[] cars;
 
+// Add values, using new
+cars = new string[] {"Volvo", "BMW", "Ford"};
 
+// Add values without using new (this will cause an error)
+cars = {"Volvo", "BMW", "Ford"};
+
+```
