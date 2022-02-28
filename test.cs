@@ -11,6 +11,7 @@ namespace HelloWorld
       Console.WriteLine("Test");
       Console.WriteLine(myString);
       Console.WriteLine(Convert.ToInt32(myString));
+      Console.WriteLine(Math.Max(30,25));
 
    
     }
